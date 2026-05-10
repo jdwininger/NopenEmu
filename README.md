@@ -1,47 +1,91 @@
-OpenEmu
-=======
+# 🎮 NopenEmu - Custom OpenEmu Build 🎮
 
-![alt text](http://openemu.org/img/intro-md.png "OpenEmu Screenshot")
+A customized build of OpenEmu with enhanced audio and disc support for classic gaming! 🚀
 
-OpenEmu is an open-source project whose purpose is to bring macOS game emulation into the realm of first-class citizenship. The project leverages modern macOS technologies, such as Cocoa, Metal, Core Animation, and other third-party libraries. One third-party library example is Sparkle, which is used for auto-updating. OpenEmu uses a modular architecture, allowing for game-engine plugins, allowing OpenEmu to support a host of different emulation engines and back ends while retaining the familiar macOS native front end.
+## ✨ Features
 
-Currently, OpenEmu can load the following game engines as plugins:
+### 🕹️ Dreamcast Support
+- **Play CDI files** - Full Dreamcast disc image support via Flycast v2.6 🌀
+- Smooth emulation with modern graphics rendering
 
-* Atari 2600 ([Stella](https://github.com/stella-emu/stella))
-* Atari 5200 ([Atari800](https://github.com/atari800/atari800))
-* Atari 7800 ([ProSystem](https://gitlab.com/jgemu/prosystem))
-* Atari Lynx ([Mednafen](https://mednafen.github.io))
-* ColecoVision ([CrabEmu](https://sourceforge.net/projects/crabemu/))
-* Famicom Disk System ([Nestopia](https://gitlab.com/jgemu/nestopia))
-* Game Boy / Game Boy Color ([Gambatte](https://gitlab.com/jgemu/gambatte))
-* Game Boy Advance ([mGBA](https://github.com/mgba-emu/mgba))
-* GameCube ([Dolphin](https://github.com/dolphin-emu/dolphin))
-* Game Gear ([Genesis Plus](https://github.com/ekeeke/Genesis-Plus-GX))
-* Intellivision ([Bliss](https://github.com/jeremiah-sypult/BlissEmu))
-* NeoGeo Pocket ([Mednafen](https://mednafen.github.io))
-* Nintendo (NES) / Famicom ([FCEUX](https://github.com/TASEmulators/fceux), [Nestopia](https://gitlab.com/jgemu/nestopia))
-* Nintendo 64 ([Mupen64Plus](https://github.com/mupen64plus))
-* Nintendo DS ([DeSmuME](https://github.com/TASEmulators/desmume))
-* Odyssey² / Videopac+ ([O2EM](https://sourceforge.net/projects/o2em/))
-* PC-FX ([Mednafen](https://mednafen.github.io))
-* SG-1000 ([Genesis Plus](https://github.com/ekeeke/Genesis-Plus-GX))
-* Sega 32X ([picodrive](https://github.com/notaz/picodrive))
-* Sega CD / Mega CD ([Genesis Plus](https://github.com/ekeeke/Genesis-Plus-GX))
-* Sega Genesis / Mega Drive ([Genesis Plus](https://github.com/ekeeke/Genesis-Plus-GX))
-* Sega Master System ([Genesis Plus](https://github.com/ekeeke/Genesis-Plus-GX))
-* Sega Saturn ([Mednafen](https://mednafen.github.io))
-* Sony PSP ([PPSSPP](https://github.com/hrydgard/ppsspp))
-* Sony PlayStation ([Mednafen](https://mednafen.github.io))
-* Super Nintendo (SNES) ([BSNES](https://github.com/bsnes-emu/bsnes), [Snes9x](https://github.com/snes9xgit/snes9x))
-* TurboGrafx-16 / PC Engine ([Mednafen](https://mednafen.github.io))
-* TurboGrafx-CD / PCE-CD ([Mednafen](https://mednafen.github.io))
-* Vectrex ([VecXGL](https://github.com/james7780/VecXGL))
-* Virtual Boy ([Mednafen](https://mednafen.github.io))
-* WonderSwan ([Mednafen](https://mednafen.github.io))
+### 🔊 Enhanced Sega Genesis Audio
 
-Minimum Requirements
---------------------
+#### 🎵 MSU-MD Support
+- Play Genesis ROMs with enhanced audio tracks
+- Support for `.cue` and `.bin` companion files
+- Perfect for romhacks and enhanced releases
 
-macOS Mojave 10.14.4
+#### 🎼 MD+ Support  
+- Full MP3 audio enhancement for Mega Drive games
+- Automatic discovery of track files (numeric patterns, cue sheets, suffix patterns)
+- YX5200 cartridge mapper support
 
-Building the default branch requires Xcode 14.3 and macOS Ventura.
+#### 🎶 Organized Per-Game Library
+- Each enhanced pack gets its own folder to prevent filename collisions
+- Automatic sidecar file management (tracks, cue sheets, bin files)
+- "Copy to Library" fully supported
+
+### 🎨 Super Nintendo Entertainment System
+
+#### 🎺 MSU-1 Audio Support
+- Enhanced SNES ROM audio via MSU-1 format
+- Full support for music packs with companion files
+- PCM and OGG audio track support
+- Automatic track discovery and fallback patterns
+
+## 🔧 Technical Details
+
+### Core Versions
+| Component | Version | Notes |
+|-----------|---------|-------|
+| **SNES9x** | 1.63 | Latest stable release with MSU-1 support |
+| **Genesis Plus GX** | Current (05.09.2026) | Up-to-date Mega Drive/Genesis emulation |
+| **Flycast** | v2.6 | Modern Dreamcast emulator with 3D graphics |
+
+### Build Architecture
+- **macOS x86_64** - Intel Mac native build
+- **Hardened Runtime** - Notarization-ready code signing
+- **All Cores Bundled** - Complete set of emulators in single app bundle
+
+## 📦 Import Features
+
+### Smart Archive Detection
+Automatically recognizes and properly unpacks:
+- **MSU-1 Packs** (`.msu1` files or `.zip` with SNES ROM + audio)
+- **MD+ Packs** (`.zip` with Genesis ROM + `.cue`/`.mp3` files)
+- **MSU-MD Packs** (Genesis ROM + audio sidecars)
+
+### Sidecar File Support
+Automatically copies companion files for:
+- `.cue`, `.m3u` - Disc descriptors
+- `.bin`, `.iso`, `.img` - Disc images
+- `.mp3`, `.wav`, `.flac` - Audio tracks
+- `.msu`, `.pcm` - MSU-1 audio data
+- `.bps`, `.ips`, `.ups` - ROM patches
+
+## 🎯 Quick Start
+
+1. **Import Enhanced ROMs** 📥
+   - Drag MSU-1/MSU-MD/MD+ packs into OpenEmu
+   - Enable "Copy to Library" for organized storage
+   - Games automatically get their own folder
+
+2. **Launch & Play** ▶️
+   - Select game from library
+   - Enhanced audio loads automatically
+   - Enjoy your upgraded soundtrack! 🎵
+
+3. **Dreamcast Gaming** 🌀
+   - Drop CDI files into Dreamcast section
+   - Flycast handles rendering with modern graphics
+   - Play your favorite Dreamcast classics
+
+## 📝 License
+
+This is a customized build based on OpenEmu. See original project at: https://github.com/OpenEmu/OpenEmu
+
+## 🎉 Enjoy!
+
+With these enhancements, your classic gaming library just got a whole lot better! Whether it's enhanced Genesis soundtracks, SNES with full CD-quality music, or experiencing Dreamcast perfection on Mac—this build brings it all together. 🚀✨
+
+Happy gaming! 🎮💫
