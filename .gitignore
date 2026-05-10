@@ -23,3 +23,6 @@ profile
 DerivedData/
 CodeSign.xcconfig
 /OpenEmu.xcworkspace/xcshareddata/swiftpm/Package.resolved
+
+# Build outputs
+dist/
