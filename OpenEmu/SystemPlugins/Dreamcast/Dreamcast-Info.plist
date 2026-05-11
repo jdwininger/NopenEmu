@@ -165,6 +165,7 @@
 	</dict>
 	<key>OEFileSuffixes</key>
 	<array>
+		<string>chd</string>
 		<string>cdi</string>
 		<string>gdi</string>
 	</array>

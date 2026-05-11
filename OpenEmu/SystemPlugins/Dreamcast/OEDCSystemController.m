@@ -28,4 +28,16 @@
 
 @implementation OEDCSystemController
 
+- (OEFileSupport)canHandleFile:(__kindof OEFile *)file
+{
+  NSString *ext = file.fileExtension.lowercaseString;
+
+  // CHD is also used by Arcade; mark Dreamcast optical disc formats as a
+  // definitive Dreamcast match during import classification.
+  if([ext isEqualToString:@"chd"] || [ext isEqualToString:@"cdi"] || [ext isEqualToString:@"gdi"])
+    return OEFileSupportYes;
+
+  return OEFileSupportUncertain;
+}
+
 @end
