@@ -26,3 +26,6 @@ CodeSign.xcconfig
 
 # Build outputs
 dist/
+
+# Personal scripts
+/Scripts/
